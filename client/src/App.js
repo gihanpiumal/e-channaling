@@ -1,9 +1,14 @@
+import React from "react";
+import { BrowserRouter, Switch } from "react-router-dom";
+import { appRoutes } from "./navigation";
+
 import './App.css';
 
-function App() {
+const App=()=> {
+  let routes = <Switch>{appRoutes()}</Switch>;
   return (
     <div className="App">
-      App
+    <BrowserRouter>{routes}</BrowserRouter>
     </div>
   );
 }
