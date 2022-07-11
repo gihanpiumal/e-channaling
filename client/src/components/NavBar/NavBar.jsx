@@ -49,8 +49,8 @@ export class NavBar extends Component {
             </li>
             <li>
               <Search
-                placeholder="input search text"
-                style={{ width: 200 }}
+                placeholder="Search Doctor's Name or Speciali"
+                style={{ width: 300 }}
               />
             </li>
           </ul>

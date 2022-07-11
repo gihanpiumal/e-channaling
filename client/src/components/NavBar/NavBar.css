@@ -4,7 +4,7 @@
 
 .nav-bar-logo {
   float: left;
-  padding-left: 50px;
+  margin-left: 200px;
 }
 
 .nav-bar-log-text {
@@ -18,6 +18,9 @@
   padding: 10px;
   display: flex;
 }
+.nav-bar-items {
+  margin-right: 150px;
+}
 
 .nav-bar-items ul li {
   list-style: none;
@@ -30,5 +33,5 @@
 }
 
 .nav-bar-nav-links:hover {
-    color: red;
+  color: red;
 }
