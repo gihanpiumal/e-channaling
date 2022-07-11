@@ -145,3 +145,85 @@
   color: #fff;
   text-shadow: 2px 2px #00b4d8;
 }
+
+.homepage-footer {
+  padding-bottom: 50px;
+}
+
+.homepage-footer-top-specialis {
+  margin-left: 150px;
+}
+
+.homepage-footer-top-specialis h2 {
+  font-size: 28px;
+  color: #fff;
+  background: linear-gradient(180.14deg, #5800ff 0.13%, #e900ff 99.89%);
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 18px;
+}
+
+.top-specialist-card-1 {
+  background: radial-gradient(
+    67.63% 208.71% at 14.67% 20.39%,
+    #d62196 0%,
+    rgba(0, 2, 114, 0.85) 100%
+  );
+  width: 300px;
+  height: 200px;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.top-specialist-card-2 {
+  background: radial-gradient(
+    73.15% 170.21% at 14.67% 20.39%,
+    #d62196 0%,
+    rgba(133, 29, 224, 0.85) 100%
+  );
+  width: 300px;
+  height: 200px;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.top-specialist-card-3 {
+  background: radial-gradient(
+    67.63% 208.71% at 14.67% 20.39%,
+    #fcd307 0%,
+    rgba(182, 67, 205, 0.85) 100%
+  );
+  width: 300px;
+  height: 200px;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.top-specialist-card-avatar {
+  margin-top: 25px;
+}
+
+.top-specialist-card-text {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.top-specialist-card-text h1 {
+  color: #fff;
+}

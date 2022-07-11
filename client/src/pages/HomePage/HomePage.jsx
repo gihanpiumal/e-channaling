@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import { Card, Col, Row, Button, Space } from "antd";
-import { PlayCircleOutlined, DoubleRightOutlined } from "@ant-design/icons";
+import { Card, Col, Row, Button, Space, Avatar } from "antd";
+import { PlayCircleOutlined, UserOutlined } from "@ant-design/icons";
 
 import "./HomePage.css";
 
@@ -124,6 +124,60 @@ export class HomePage extends Component {
               </Row>
             </Row>
           </div>
+        </div>
+        <div className="homepage-footer">
+          <div className="homepage-footer-top-specialis">
+            <Row span={24}>
+              <h2>
+                <Space>Top Specialities</Space>
+              </h2>
+            </Row>
+          </div>
+
+          <Row span={24}>
+            <Row span={8}>
+              <div className="top-specialist-card-1">
+                <div className="top-specialist-card-avatar">
+                  <Avatar
+                    size={64}
+                    style={{ backgroundColor: "#87d068" }}
+                    icon={<UserOutlined />}
+                  />
+                </div>
+                <div className="top-specialist-card-text">
+                  <h1>Channel a Physician</h1>
+                </div>
+              </div>
+            </Row>
+            <Row span={8}>
+              <div className="top-specialist-card-2">
+                <div className="top-specialist-card-avatar">
+                  <Avatar
+                    size={64}
+                    style={{ backgroundColor: "#87d068" }}
+                    icon={<UserOutlined />}
+                  />
+                </div>
+                <div className="top-specialist-card-text">
+                  <h1>Channel a Yourologist</h1>
+                </div>
+              </div>
+            </Row>
+            <Row span={8}>
+              <div className="top-specialist-card-3">
+                <div className="top-specialist-card-avatar">
+                  <Avatar
+                    size={64}
+                    style={{ backgroundColor: "#87d068" }}
+                    icon={<UserOutlined />}
+                  />
+                </div>
+                <div className="top-specialist-card-text">
+                  <h1>Channel a Niurologist</h1>
+                </div>
+              </div>
+            </Row>
+          </Row>
         </div>
       </div>
     );
