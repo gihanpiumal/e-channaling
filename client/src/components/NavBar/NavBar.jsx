@@ -6,6 +6,8 @@ import { Input, Space } from "antd";
 import { RoutesConstant } from "../../assets/constants";
 import "./NavBar.css";
 
+import logo from "../../images/logo.png"
+
 
 const { Search } = Input;
 
@@ -15,7 +17,7 @@ export class NavBar extends Component {
       <div className="nav-bar-wrapper">
         <div className="nav-bar-logo">
           <NavLink className={"nav-bar-log-text"} to={RoutesConstant.home}>
-            E-channel
+            <img src={logo} alt="logo" />
           </NavLink>
         </div>
         <div className="nav-bar-items">

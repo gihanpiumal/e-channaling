@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Redirect } from "react-router-dom";
 
 import { RoutesConstant } from "./assets/constants";
 import { appRoutes } from "./navigation";
-import { NavBar } from "./components";
+import { NavBar, Footer } from "./components";
 
 import "./App.css";
 
@@ -18,6 +18,7 @@ const App = () => {
       <BrowserRouter>
         <NavBar />
         {routes}
+        <Footer/>
       </BrowserRouter>
     </div>
   );

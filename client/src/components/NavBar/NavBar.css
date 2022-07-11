@@ -7,9 +7,8 @@
   margin-left: 200px;
 }
 
-.nav-bar-log-text {
-  color: #fff;
-  font-size: 28px;
+.nav-bar-log-text img{
+  width: 150px;
   text-decoration: none;
 }
 
