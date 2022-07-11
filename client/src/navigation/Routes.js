@@ -1,7 +1,7 @@
 
 import { Redirect, Route } from "react-router-dom";
 
-import { HomePage, Doctors } from "../pages";
+import { HomePage, Doctors, Pharmacy } from "../pages";
 import { RoutesConstant, StringConstant } from "../assets/constants";
 import PrivateRoutes from "./PrivertRoutes";
 
@@ -18,6 +18,12 @@ export default () =>{
           key="doctors"
           path={RoutesConstant.doctors}
           component={Doctors}
+        />,
+        <PrivateRoutes
+          exact
+          key="pharmacy"
+          path={RoutesConstant.pharmacy}
+          component={Pharmacy}
         />,
 
     ]

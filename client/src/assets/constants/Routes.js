@@ -3,6 +3,6 @@ export default {
   home: "/home",
   aboutus: "/home/about",
   contactus: "/home/contsct",
-  doctors: "/home/doctors",
-  pharmacy: "/home/pharmacy",
+  doctors: "/home_/doctors",
+  pharmacy: "/home_/pharmacy",
 };
