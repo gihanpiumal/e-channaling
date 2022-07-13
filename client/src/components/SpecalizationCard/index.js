@@ -1,0 +1,1 @@
+export { default as SpecalizationCard} from "./SpecalizationCard"

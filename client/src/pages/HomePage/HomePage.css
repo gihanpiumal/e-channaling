@@ -1,0 +1,230 @@
+.homepage-header-card img {
+  border-radius: 10px;
+  opacity: 0.7;
+}
+.homepage-header {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.homepage-header-text {
+  margin-left: 150px;
+}
+
+.hompage-header-title h1 {
+  /* text-transform: uppercase; */
+  color: #fff;
+  font-size: 34px;
+}
+
+.homepagev-subtitle p {
+  color: #fff;
+}
+
+.homepage-header-card {
+  margin-left: 150px;
+}
+
+.homepage-header-button-btn {
+  background: red;
+  font-size: 50px;
+}
+.homepage-header-button {
+  margin-left: 150px;
+}
+.homepage-header-chart {
+  margin-left: 150px;
+}
+
+.homepage-middle {
+  padding-bottom: 50px;
+}
+
+.homepage-middle-access {
+  margin-left: 150px;
+}
+
+.homepage-middle-access {
+  margin-left: 150px;
+}
+
+.homepage-middle-access h2 {
+  font-size: 28px;
+  color: #fff;
+  background: linear-gradient(180.14deg, #5800ff 0.13%, #e900ff 99.89%);
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 18px;
+}
+
+.pcr-card {
+  background: linear-gradient(180.14deg, #270082 0.13%, #7a0bc0 61.28%);
+  width: 300px;
+  height: 200px;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 150px;
+  cursor: pointer;
+}
+
+.find-doctor-card {
+  background: linear-gradient(
+    180.14deg,
+    #b000b9 0.13%,
+    rgba(154, 6, 128, 0.49) 99.89%
+  );
+  width: 300px;
+  height: 200px;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 150px;
+  cursor: pointer;
+}
+
+.find-medicine-card {
+  background: linear-gradient(
+    180.14deg,
+    #d62196 0.13%,
+    rgba(0, 2, 114, 0.67) 99.89%
+  );
+  width: 300px;
+  height: 200px;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 150px;
+  cursor: pointer;
+}
+
+.pcr-card-img {
+  width: 300px;
+  height: 200px;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.find-doctor-card-img {
+  width: 300px;
+  height: 200px;
+  background-repeat: no-repeat;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+.find-medicine-card-img {
+  width: 300px;
+  height: 200px;
+  background-repeat: no-repeat;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.pcr-card-img h1 {
+  font-size: 64px;
+  margin-left: 140px;
+  padding-top: 80px;
+  color: #fff;
+  text-shadow: 2px 2px #00b4d8;
+}
+
+.find-doctor-card-img h1 {
+  font-size: 48px;
+  margin-left: 100px;
+  padding-top: 20px;
+  color: #fff;
+  text-shadow: 2px 2px #00b4d8;
+}
+
+.find-medicine-card-text h1 {
+  font-size: 48px;
+  margin-left: 80px;
+  padding-top: 20px;
+  color: #fff;
+  text-shadow: 2px 2px #00b4d8;
+}
+
+.homepage-footer {
+  padding-bottom: 50px;
+}
+
+.homepage-footer-top-specialis {
+  margin-left: 150px;
+}
+
+.homepage-footer-top-specialis h2 {
+  font-size: 28px;
+  color: #fff;
+  background: linear-gradient(180.14deg, #5800ff 0.13%, #e900ff 99.89%);
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 18px;
+}
+
+.top-specialist-card-1 {
+  background: radial-gradient(
+    67.63% 208.71% at 14.67% 20.39%,
+    #d62196 0%,
+    rgba(0, 2, 114, 0.85) 100%
+  );
+  width: 300px;
+  height: 200px;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.top-specialist-card-2 {
+  background: radial-gradient(
+    73.15% 170.21% at 14.67% 20.39%,
+    #d62196 0%,
+    rgba(133, 29, 224, 0.85) 100%
+  );
+  width: 300px;
+  height: 200px;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.top-specialist-card-3 {
+  background: radial-gradient(
+    67.63% 208.71% at 14.67% 20.39%,
+    #fcd307 0%,
+    rgba(182, 67, 205, 0.85) 100%
+  );
+  width: 300px;
+  height: 200px;
+  align-items: center;
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.top-specialist-card-avatar {
+  margin-top: 25px;
+}
+
+.top-specialist-card-text {
+  margin-top: 15px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.top-specialist-card-text h1 {
+  color: #fff;
+}

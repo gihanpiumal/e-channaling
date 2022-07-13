@@ -1,0 +1,36 @@
+.nav-bar-wrapper {
+  overflow: auto;
+}
+
+.nav-bar-logo {
+  float: left;
+  margin-left: 200px;
+}
+
+.nav-bar-log-text img{
+  width: 150px;
+  text-decoration: none;
+}
+
+.nav-bar-items ul {
+  float: right;
+  padding: 10px;
+  display: flex;
+}
+.nav-bar-items {
+  margin-right: 150px;
+}
+
+.nav-bar-items ul li {
+  list-style: none;
+  margin-right: 50px;
+}
+.nav-bar-nav-links {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-bar-nav-links:hover {
+  color: red;
+}
