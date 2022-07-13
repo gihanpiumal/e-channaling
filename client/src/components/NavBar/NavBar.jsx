@@ -49,12 +49,12 @@ export class NavBar extends Component {
                 Pharmacy
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <Search
                 placeholder="Search Doctor's Name or Speciali"
                 style={{ width: 300 }}
               />
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>

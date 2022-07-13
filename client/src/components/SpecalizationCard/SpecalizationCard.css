@@ -1,0 +1,30 @@
+.sppecial-delail {
+  padding-bottom: 20px;
+}
+
+.special-card-book {
+  float: left;
+  border-radius: 10px;
+  color: #fff;
+  background: #711a75;
+}
+
+.special-card-view {
+  margin-left: 40px;
+  float: right;
+  border-radius: 10px;
+  color: #fff;
+  background: #711a75;
+}
+
+.special-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specialization-detail-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
