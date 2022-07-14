@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios"
 
 import {
   Col,
@@ -18,6 +19,7 @@ import {
   EyeOutlined,
 } from "@ant-design/icons";
 
+import {HomePage as home} from "../../services"
 import "./HomePage.css";
 
 import headerCardImage from "../../images/1.jpg";
@@ -38,11 +40,26 @@ export class HomePage extends Component {
       isFindDoctorsModalVisible: false,
       isFindMedicineModalVisible: false,
       isChannelSpecializeModalVisible: false,
+      posts:[]
     };
   }
-  aaa = () => {
-    console.log(">>>>>>>>");
-  };
+
+  componentDidMount = () =>{
+    this.testAPI()
+  }
+
+  testAPI = async () =>{
+    // axios.get("http://localhost:8000/all_users").then(res=>{
+    //   if(res.data.success){
+    //     this.setState({posts: res.data.allUsers})
+    //   }
+    //   console.log(this.state.posts);
+    // })
+    let data = await home.getAllUsers()
+    if(data){
+      console.log(data);
+    }
+  }
 
   ////////////////////////////////// modal controls //////////////////////////////
 
@@ -107,6 +124,10 @@ export class HomePage extends Component {
   ];
 
   /////////////////////// tempory data  //////////////////////////
+
+  test = () =>{
+    console.log(this.state.posts)
+  }
 
   render() {
     const {
@@ -331,6 +352,7 @@ export class HomePage extends Component {
                   paddingLeft: 10,
                   paddingRight: 10,
                 }}
+                onClick={this.test}
               >
                 <Space>
                   <PlayCircleOutlined />
