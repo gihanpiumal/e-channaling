@@ -12,12 +12,14 @@ const instance = axios.create({
 });
 
 const http = {
+
   getData: async function (url, parm) {
     let response;
     await instance({
       method: "GET",
       url: url,
       params: parm,
+      headers: { "x-access-token": "11224" },
     })
       .then((res) => {
         response = res.data;

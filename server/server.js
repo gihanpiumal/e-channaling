@@ -6,13 +6,15 @@ const cors = require("cors")
 const app = express();
 
 //import routes
-const postRoutes = require("./routes/users");
+const userRoutes = require("./routes/users");
+const doctorRoutes = require("./routes/Doctors");
 
 //middleware
 app.use(bodyparser.json());
 app.use(cors())
 
-app.use(postRoutes);
+app.use(userRoutes);
+app.use(doctorRoutes);
 
 const PORT = 8000;
 const DB_URL =
