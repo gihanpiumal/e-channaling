@@ -352,7 +352,7 @@ export class HomePage extends Component {
                   paddingLeft: 10,
                   paddingRight: 10,
                 }}
-                onClick={this.test}
+                onClick={this.testAPI}
               >
                 <Space>
                   <PlayCircleOutlined />
