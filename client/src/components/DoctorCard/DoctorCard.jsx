@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FileBase from "react-file-base64"
 
 import {
   Card,
@@ -22,7 +23,7 @@ const { Option } = Select;
 const { Search } = Input;
 
 const DoctorCard = ({ record }) => {
-  console.log(record);
+  console.log(record.avatarFile);
   const [isDoctorModalVisible, setIsDoctorModalVisible] = useState(false);
   const [isApoimentModalVisible, setIsApoimentModalVisible] = useState(false);
 
@@ -207,13 +208,13 @@ const DoctorCard = ({ record }) => {
         >
           <div className="aa">
             <div>
-              {/* <Row>
+              <Row>
                 <Avatar
                   className="doctorcard-avatar"
                   size="large"
-                  src={<Image src={record.avatar} style={{ width: 32 }} />}
+                  src={<Image src={`data:image/jpeg;base64,${record.avatarFile}`} style={{ width: 32 }} />}
                 />
-              </Row> */}
+              </Row>
             </div>
             <div>
               <Row>

@@ -3,8 +3,10 @@ import React, { Component } from "react";
 import { Col, Row, Table, Input, Button, Select } from "antd";
 import { EyeOutlined, FilterOutlined } from "@ant-design/icons";
 
+import Paper from '@material-ui/core/Paper';
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
+import { makeStyles } from "@material-ui/core/styles";
 
 import { Doctors_api } from "../../services";
 import { Specialization_api } from "../../services";
@@ -16,8 +18,19 @@ import specialImage from "../../images/physiologist.png";
 
 const { Search } = Input;
 const { Option } = Select;
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+}));
 
 export class Doctors extends Component {
+  classes = useStyles();
   constructor(props) {
     super(props);
     this.state = {
@@ -147,7 +160,7 @@ export class Doctors extends Component {
     let data = await Doctors_api.getPopulorDoctorsId();
     console.log(data.users);
     if (data) {
-      this.setState({populorDoctorsList: data.users})
+      this.setState({ populorDoctorsList: data.users });
       // data.users.map((val) => {
       //   console.log(val);
       // });
@@ -181,22 +194,36 @@ export class Doctors extends Component {
             </Row>
           </div>
           <div className="doctors-header-cards">
-            <Row>
-              {/* <Box sx={{ flexGrow: 1 }}> */}
+            <div className={this.classes.root}>
+              <Grid container spacing={3}>
+                <Grid item xs>
+                  <Paper className={this.classes.paper}>
+                  {populorDoctorsList.map((val, index) => (
+                    <Grid container key={index}>
+                      <DoctorCard className={"item-card"} record={val} />
+                    </Grid>
+                  ))}
+                    
+                  </Paper>
+                </Grid>
+              </Grid>
+            </div>
+            {/* <Row>
+              <Box sx={{ flexGrow: 1 }}>
                 <Grid
                   container
-                  justifyContent="center" 
+                  alignItems="center"
                   spacing={3}
-                  // columns={{ xs: 4, sm: 8, md: 12 }}
+                  columns={{ xs: 4, sm: 8, md: 12 }}
                 >
                   {populorDoctorsList.map((val, index) => (
-                    <Grid container  key={index}>
+                    <Grid container key={index}>
                       <DoctorCard className={"item-card"} record={val} />
                     </Grid>
                   ))}
                 </Grid>
-               {/* </Box> */}
-            </Row>
+              </Box>
+            </Row> */}
           </div>
         </div>
         <div className="doctors-middle">
