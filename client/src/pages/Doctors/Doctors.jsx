@@ -6,6 +6,8 @@ import { EyeOutlined, FilterOutlined } from "@ant-design/icons";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
+import { Doctors_api } from "../../services";
+import { Specialization_api } from "../../services";
 import { DoctorCard, SpecalizationCard } from "../../components";
 import "./Doctors.css";
 
@@ -19,10 +21,19 @@ export class Doctors extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      tableList: [],
+      specializationList: [],
       populorDoctorsList: [],
       populorScpecializationList: [],
       filterExpand: "",
       loading: true,
+
+      form: {
+        _id: "",
+        firstName: "",
+        specializationId: "",
+        gender: "",
+      },
     };
   }
 
@@ -30,8 +41,8 @@ export class Doctors extends Component {
   columns = [
     {
       title: "Doctor Name",
-      dataIndex: "doctor_name",
-      key: "doctor_name",
+      dataIndex: "firstName",
+      key: "firstName",
     },
     {
       title: "Specialization",
@@ -45,8 +56,8 @@ export class Doctors extends Component {
     },
     {
       title: "High Education",
-      dataIndex: "high_education",
-      key: "high_education",
+      dataIndex: "highEducation",
+      key: "highEducation",
     },
     {
       title: "Action",
@@ -78,38 +89,18 @@ export class Doctors extends Component {
     );
   };
 
-  componentDidMount = () => {
-    let tempDoctorsData = [
-      {
-        avatar: avatar,
-        name: "Gihan Piumal MBBS(Lon)",
-        specialization: "Pysiology",
-      },
-      {
-        avatar: avatar,
-        name: "Gihan Piumal MBBS(Lon)",
-        specialization: "Pysiology",
-      },
-      {
-        avatar: avatar,
-        name: "Gihan Piumal MBBS(Lon)",
-        specialization: "Pysiology",
-      },
-    ];
+  componentDidMount = async () => {
+    await this.loadAllDoctors();
+    await this.getMOstPopulorDoctors();
+    // let tempDoctorsData = [
+    //   {
+    //     avatar: avatar,
+    //     name: "Gihan Piumal MBBS(Lon)",
+    //     specialization: "Pysiology",
+    //   },
+    // ];
 
     let tempSpecializationData = [
-      {
-        image: specialImage,
-        specialization: "Pysiology",
-        Description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti beatae error totam eaque, ad saepe, sequi dolorum commodi voluptatum minima qui facilis exercitationem cupiditate dolores. Commodi quod in autem nulla?",
-      },
-      {
-        image: specialImage,
-        specialization: "Pysiology",
-        Description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti beatae error totam eaque, ad saepe, sequi dolorum commodi voluptatum minima qui facilis exercitationem cupiditate dolores. Commodi quod in autem nulla?",
-      },
       {
         image: specialImage,
         specialization: "Pysiology",
@@ -119,12 +110,52 @@ export class Doctors extends Component {
     ];
 
     this.setState({
-      populorDoctorsList: tempDoctorsData,
+      // populorDoctorsList: tempDoctorsData,
       populorScpecializationList: tempSpecializationData,
     });
   };
 
+  getSpecializationList = async () => {
+    let data = await Specialization_api.getAllSpecializations();
+    if (data) {
+      this.setState({ specializationList: data });
+    }
+  };
+
+  loadAllDoctors = async () => {
+    const form = this.state;
+
+    let objdata = {
+      _id: form._id,
+      firstName: form.firstName,
+      specializationId: form.specializationId,
+      gender: form.gender,
+    };
+
+    let data = await Doctors_api.getAllDoctors(objdata);
+
+    if (data) {
+      this.setState({ tableList: data.allDoctors });
+    } else {
+      console.log("errr");
+    }
+
+    await this.getSpecializationList();
+  };
+
+  getMOstPopulorDoctors = async () => {
+    let data = await Doctors_api.getPopulorDoctorsId();
+    console.log(data.users);
+    if (data) {
+      this.setState({populorDoctorsList: data.users})
+      // data.users.map((val) => {
+      //   console.log(val);
+      // });
+    }
+  };
+
   toggleFilter = () => {
+    this.getMOstPopulorDoctors();
     const { filterExpand } = this.state;
     let styleName = "";
 
@@ -151,19 +182,20 @@ export class Doctors extends Component {
           </div>
           <div className="doctors-header-cards">
             <Row>
-              <Box sx={{ flexGrow: 1 }}>
+              {/* <Box sx={{ flexGrow: 1 }}> */}
                 <Grid
                   container
-                  spacing={{ xs: 2, md: 3 }}
-                  columns={{ xs: 4, sm: 8, md: 12 }}
+                  justifyContent="center" 
+                  spacing={3}
+                  // columns={{ xs: 4, sm: 8, md: 12 }}
                 >
                   {populorDoctorsList.map((val, index) => (
-                    <Grid item xs={2} sm={4} md={4} key={index}>
+                    <Grid container  key={index}>
                       <DoctorCard className={"item-card"} record={val} />
                     </Grid>
                   ))}
                 </Grid>
-              </Box>
+               {/* </Box> */}
             </Row>
           </div>
         </div>
@@ -254,9 +286,10 @@ export class Doctors extends Component {
             <Row>
               <Box sx={{ flexGrow: 1 }}>
                 <Table
+                  key={"table-doctors"}
                   className="doctors-footer-table"
                   pagination={false}
-                  dataSource={this.data}
+                  dataSource={this.state.tableList}
                   columns={this.columns}
                 />
               </Box>

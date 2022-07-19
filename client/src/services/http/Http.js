@@ -3,7 +3,7 @@ import axios from "axios";
 // import { $Message } from "../../components/antd";
 
 const instance = axios.create({
-  baseURL: "http://localhost:8000/",
+  baseURL: "http://localhost:8000/api/",
   //   baseURL: process.env.REACT_APP_API_URL,
   responseType: "json",
   headers: {
@@ -29,28 +29,26 @@ const http = {
 
         response = { data: errorObj.data, reCall: errorObj.reCall };
       });
-    console.log(response);
     return response;
   },
 
-  //   postData: async function (url, data, extraHeaders, parm) {
-  //     let response;
-  //     await instance({
-  //       method: "POST",
-  //       headers: { "x-access-token": getAccessToken(), extraHeaders },
-  //       url: url,
-  //       data: data,
-  //       params: parm,
-  //     })
-  //       .then((res) => {
-  //         response = res.data;
-  //       })
-  //       .catch(async (err) => {
-  //         let errorObj = await setError(err);
-  //         response = { data: errorObj.data, reCall: errorObj.reCall };
-  //       });
-  //     return response;
-  //   },
+    postData: async function (url, parm) {
+      let response;
+      await instance({
+        method: "POST",
+        headers: { "x-access-token": "11224"  },
+        url: url,
+        params: parm,
+      })
+        .then((res) => {
+          response = res.data;
+        })
+        .catch(async (err) => {
+          let errorObj = await setError(err);
+          response = { data: errorObj.data, reCall: errorObj.reCall };
+        });
+      return response;
+    },
 
   //   putData: async function (url, data, extraHeaders, parm) {
   //     let response;
