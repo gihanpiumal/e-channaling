@@ -1,0 +1,1 @@
+export { default as Doctors_api} from "./Doctors"

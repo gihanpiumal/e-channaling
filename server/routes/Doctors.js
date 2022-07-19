@@ -13,7 +13,7 @@ router.post("/api/all_doctors", (req, res, next) => {
 
   dataObj = {
     $and: [
-      { userRole: { $eq: "Doctor" } },
+      { userRoleId: { $eq: "62d178eba8f0872015aeca8e" } },
       data._id === "" || data._id === null || !data._id
         ? {}
         : {
@@ -55,7 +55,7 @@ router.post("/api/all_doctors", (req, res, next) => {
     }
     return res.status(200).json({
       success: "true",
-      allUsers: users,
+      allDoctors: users,
     });
   });
 });
@@ -115,7 +115,7 @@ router.post("/api/add_specialization", (req, res) => {
 // get All specializations
 router.get("/api/get_all_specialization", (req, res, next) => {
   
-    specialization.find().exec((err, users) => {
+    specialization.find().exec((err, all_specialization) => {
       if (err) {
         return res.status(400).json({
           error: err,
@@ -123,7 +123,7 @@ router.get("/api/get_all_specialization", (req, res, next) => {
       }
       return res.status(200).json({
         success: "true",
-        users,
+        all_specialization,
       });
     });
   });
@@ -150,13 +150,12 @@ router.post("/api/doctors/add_most_populor_doctors", (req, res) => {
 
 
 // get most populor doctors id list
-router.get("/api/x", (req, res, next) => {
+router.get("/api/populor_doctors_id", (req, res, next) => {
     // console.log(req.body);
     let dataObj = {};
     let data = req.body;
   
     MostPopulorDoctors.find().exec((err, users) => {
-        console.log(users);
       if (err) {
         return res.status(400).json({
           error: err,

@@ -22,6 +22,7 @@ const { Option } = Select;
 const { Search } = Input;
 
 const DoctorCard = ({ record }) => {
+  console.log(record);
   const [isDoctorModalVisible, setIsDoctorModalVisible] = useState(false);
   const [isApoimentModalVisible, setIsApoimentModalVisible] = useState(false);
 
@@ -70,19 +71,19 @@ const DoctorCard = ({ record }) => {
         footer={null}
         // style={{borderRadius: 15}}
       >
-        <Row>
+        {/* <Row>
           <Avatar
             className="doctorcard-avatar"
             size="large"
             src={<Image src={data.avatar} style={{ width: 32 }} />}
           />
-        </Row>
+        </Row> */}
         <Row span={24}>
           <Col span={10}>
             <h3>Name :</h3>
           </Col>
           <Col span={14}>
-            <h3>{data.name}</h3>
+            <h3>{record.firstName}</h3>
           </Col>
         </Row>
         <Row span={24}>
@@ -90,7 +91,7 @@ const DoctorCard = ({ record }) => {
             <h3>Specialization :</h3>
           </Col>
           <Col span={14}>
-            <h3>{data.specialization}</h3>
+            <h3>{record.specialization}</h3>
           </Col>
         </Row>
         <Row span={24}>
@@ -98,7 +99,7 @@ const DoctorCard = ({ record }) => {
             <h3>Gender :</h3>
           </Col>
           <Col span={14}>
-            <h3>{data.gender}</h3>
+            <h3>{record.gender}</h3>
           </Col>
         </Row>
         <Row span={24}>
@@ -106,7 +107,7 @@ const DoctorCard = ({ record }) => {
             <h3>Description :</h3>
           </Col>
           <Col span={14}>
-            <h4>{data.Description}</h4>
+            <h4>{record.description}</h4>
           </Col>
         </Row>
         <Row>
@@ -206,17 +207,17 @@ const DoctorCard = ({ record }) => {
         >
           <div className="aa">
             <div>
-              <Row>
+              {/* <Row>
                 <Avatar
                   className="doctorcard-avatar"
                   size="large"
                   src={<Image src={record.avatar} style={{ width: 32 }} />}
                 />
-              </Row>
+              </Row> */}
             </div>
             <div>
               <Row>
-                <h2 className="doctor-name">{record.name}</h2>
+                <h2 className="doctor-name">{record.firstName}</h2>
               </Row>
             </div>
             <div className="ab">

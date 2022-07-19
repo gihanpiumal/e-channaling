@@ -1,0 +1,1 @@
+export {default as Specialization_api} from "./Specialization"
